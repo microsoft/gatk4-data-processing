@@ -329,7 +329,7 @@ task SamToFastqAndBwaMem {
     docker: docker_image
     memory: mem_size
     cpu: num_cpu
-    disks: "local-disk " + disk_size + " HDD"
+    disk: "" + disk_size + " GB"
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
@@ -384,13 +384,13 @@ task MergeBamAlignment {
       --PROGRAM_GROUP_NAME "bwamem" \
       --UNMAPPED_READ_STRATEGY COPY_TO_TAG \
       --ALIGNER_PROPER_PAIR_FLAGS true \
-      --UNMAP_CONTAMINANT_READS true
+      --UNMAP_CONTAMINANT_READS true 
   }
   runtime {
     preemptible: preemptible_tries
     docker: docker_image
     memory: mem_size
-    disks: "local-disk " + disk_size + " HDD"
+    disk: "" + disk_size + " GB"
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
@@ -438,7 +438,7 @@ task SortAndFixTags {
     preemptible: preemptible_tries
     docker: docker_image
     memory: mem_size
-    disks: "local-disk " + disk_size + " HDD"
+    disk: "" + disk_size + " GB"
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
@@ -480,7 +480,7 @@ task MarkDuplicates {
     preemptible: preemptible_tries
     docker: docker_image
     memory: mem_size
-    disks: "local-disk " + disk_size + " HDD"
+    disk: "" + disk_size + " GB"
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
@@ -584,7 +584,7 @@ task BaseRecalibrator {
     preemptible: preemptible_tries
     docker: docker_image
     memory: mem_size
-    disks: "local-disk " + disk_size + " HDD"
+    disk: "" + disk_size + " GB"
   }
   output {
     File recalibration_report = "${recalibration_report_filename}"
@@ -615,7 +615,7 @@ task GatherBqsrReports {
     preemptible: preemptible_tries
     docker: docker_image
     memory: mem_size
-    disks: "local-disk " + disk_size + " HDD"
+    disk: "" + disk_size + " GB"
   }
   output {
     File output_bqsr_report = "${output_report_filename}"
@@ -658,7 +658,7 @@ task ApplyBQSR {
     preemptible: preemptible_tries
     docker: docker_image
     memory: mem_size
-    disks: "local-disk " + disk_size + " HDD"
+    disk: "" + disk_size + " GB"
   }
   output {
     File recalibrated_bam = "${output_bam_basename}.bam"
@@ -691,7 +691,7 @@ task GatherBamFiles {
     preemptible: preemptible_tries
     docker: docker_image
     memory: mem_size
-    disks: "local-disk " + disk_size + " HDD"
+    disk: "" + disk_size + " GB"
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
