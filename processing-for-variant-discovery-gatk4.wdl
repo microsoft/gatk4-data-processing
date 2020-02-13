@@ -266,7 +266,7 @@ task GetBwaVersion {
     sed 's/Version: //'
   }
   runtime {
-    preemptible: preemptible_tries
+    maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
   }
@@ -325,7 +325,7 @@ task SamToFastqAndBwaMem {
 
   >>>
   runtime {
-    preemptible: preemptible_tries
+    maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
     cpu: num_cpu
@@ -387,7 +387,7 @@ task MergeBamAlignment {
       --UNMAP_CONTAMINANT_READS true 
   }
   runtime {
-    preemptible: preemptible_tries
+    maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
     disk: "" + disk_size + " GB"
@@ -435,7 +435,7 @@ task SortAndFixTags {
       --REFERENCE_SEQUENCE ${ref_fasta}
   }
   runtime {
-    preemptible: preemptible_tries
+    maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
     disk: "" + disk_size + " GB"
@@ -477,7 +477,7 @@ task MarkDuplicates {
       --CREATE_MD5_FILE true
   }
   runtime {
-    preemptible: preemptible_tries
+    maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
     disk: "" + disk_size + " GB"
@@ -537,7 +537,7 @@ task CreateSequenceGroupingTSV {
     CODE
   >>>
   runtime {
-    preemptible: preemptible_tries
+    maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
   }
@@ -581,7 +581,7 @@ task BaseRecalibrator {
       -L ${sep=" -L " sequence_group_interval}
   }
   runtime {
-    preemptible: preemptible_tries
+    maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
     disk: "" + disk_size + " GB"
@@ -612,7 +612,7 @@ task GatherBqsrReports {
       -O ${output_report_filename}
   }
   runtime {
-    preemptible: preemptible_tries
+    maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
     disk: "" + disk_size + " GB"
@@ -655,7 +655,7 @@ task ApplyBQSR {
       --use-original-qualities
   }
   runtime {
-    preemptible: preemptible_tries
+    maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
     disk: "" + disk_size + " GB"
@@ -688,7 +688,7 @@ task GatherBamFiles {
       --CREATE_MD5_FILE true
   }
   runtime {
-    preemptible: preemptible_tries
+    maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
     disk: "" + disk_size + " GB"
