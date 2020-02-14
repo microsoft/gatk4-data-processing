@@ -329,7 +329,7 @@ task SamToFastqAndBwaMem {
     docker: docker_image
     memory: mem_size
     cpu: num_cpu
-    disk: "" + disk_size + " GB"
+    disk: disk_size + " GB"
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
@@ -390,7 +390,7 @@ task MergeBamAlignment {
     maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
-    disk: "" + disk_size + " GB"
+    disk: disk_size + " GB"
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
@@ -438,7 +438,7 @@ task SortAndFixTags {
     maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
-    disk: "" + disk_size + " GB"
+    disk: disk_size + " GB"
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
@@ -480,7 +480,7 @@ task MarkDuplicates {
     maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
-    disk: "" + disk_size + " GB"
+    disk: disk_size + " GB"
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
@@ -584,7 +584,7 @@ task BaseRecalibrator {
     maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
-    disk: "" + disk_size + " GB"
+    disk: disk_size + " GB"
   }
   output {
     File recalibration_report = "${recalibration_report_filename}"
@@ -615,7 +615,7 @@ task GatherBqsrReports {
     maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
-    disk: "" + disk_size + " GB"
+    disk: disk_size + " GB"
   }
   output {
     File output_bqsr_report = "${output_report_filename}"
@@ -658,7 +658,7 @@ task ApplyBQSR {
     maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
-    disk: "" + disk_size + " GB"
+    disk: disk_size + " GB"
   }
   output {
     File recalibrated_bam = "${output_bam_basename}.bam"
@@ -691,7 +691,7 @@ task GatherBamFiles {
     maxRetries: preemptible_tries
     docker: docker_image
     memory: mem_size
-    disk: "" + disk_size + " GB"
+    disk: disk_size + " GB"
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
