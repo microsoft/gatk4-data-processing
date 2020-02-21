@@ -18,7 +18,7 @@ If you prefer to host this data on your own Storage account, you can use [AzCopy
 
 Replace all instances of `/msgenpublicdata/inputs/` with your `/destination-storage-account-name/inputs/` in the inputs JSON file.
 
-The `WholeGenomeGermlineSingleSample.hg38.json` trigger file is an example. Substitute the "WorkflowInputsUrl" with the http link to your inputs JSON file hosted on your Storage account.
+The `processing-for-variant-discovery-gatk4.b37.json` and `processing-for-variant-discovery-gatk4.hg38.json` trigger files are examples. Substitute the "WorkflowInputsUrl" with the http link to your inputs JSON file hosted on your Storage account.
 
 ## gatk4-data-processing
 
