@@ -1,4 +1,4 @@
-# Cromwell on Azure example workflow
+# Data pre-processing for variant discovery pipeline on Azure
 This repository is an example of running the data pre-processing for variant discovery pipeline, based on [Best Practices Data Pre-processing Pipeline by Broad Institute of MIT and Harvard](https://gatk.broadinstitute.org/hc/en-us/articles/360035535912-Data-pre-processing-for-variant-discovery), on Cromwell on Azure.<br/> 
 
 Learn more about using Azure for your Cromwell WDL workflows on our GitHub repo! - [Cromwell on Azure](https://github.com/microsoft/CromwellOnAzure).<br/>
